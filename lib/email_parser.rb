@@ -16,9 +16,7 @@ class EmailAddressParser
     regex = /[,\s]+/
     email_list = @@emails.split(regex)
     email_list.each do |email|
-      if @@parsed.include? (email)
-        return
-      else
+      if !@@parsed.include? (email)
         @@parsed << email
       end
     end
