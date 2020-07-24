@@ -5,7 +5,7 @@
 
 class EmailAddressParser(string)
   
-  attr_accessor
+  attr_accessor: :email
   
   def parse(string)
     regex = /[,\s]+/
