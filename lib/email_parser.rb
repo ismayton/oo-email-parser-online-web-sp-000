@@ -6,12 +6,13 @@
 class EmailAddressParser
   
   attr_accessor :string, 
-  
+  @@emails = []
+  def initialize(string)
+    @@emails << string
 
-  
   def self.parse
     regex = /[,\s]+/
-    email_list = self.split(regex)
+    email_list = @@emails.split(regex)
     email_list
   end
   
