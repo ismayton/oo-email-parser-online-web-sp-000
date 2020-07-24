@@ -5,6 +5,8 @@
 
 class EmailAddressParser(string)
   
+  attr_accessor
+  
   def parse(string)
     regex = /[,\s]+/
     email_list = string.split(regex)
