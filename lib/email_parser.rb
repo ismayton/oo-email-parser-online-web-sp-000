@@ -9,6 +9,7 @@ class EmailAddressParser
   @@emails = []
   def initialize(string)
     @@emails << string
+  end
 
   def self.parse
     regex = /[,\s]+/
