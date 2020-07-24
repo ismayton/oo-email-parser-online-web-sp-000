@@ -11,9 +11,9 @@ class EmailAddressParser(string)
     parse(string)
   end
   
-  def parse(string)
+  def self.parse
     regex = /[,\s]+/
-    email_list = string.split(regex)
+    email_list = self.split(regex)
     email_list
   end
   
