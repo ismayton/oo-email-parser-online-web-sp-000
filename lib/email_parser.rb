@@ -4,3 +4,7 @@
 # or whitespace (' ').
 
 class EmailAddressParser
+  
+  def initialize(string)
+    string.split()
+end
