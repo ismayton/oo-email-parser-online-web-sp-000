@@ -8,10 +8,10 @@ class EmailAddressParser
   attr_accessor :string, 
   
   def initialize(string)
-    @string = string
+    @@string = string
   end
   
-  def parse(@string)
+  def parse(string)
     regex = /[,\s]+/
     email_list = string.split(regex)
     email_list
