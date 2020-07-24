@@ -5,10 +5,14 @@
 
 class EmailAddressParser
   
-
+  def initialize(string)
+    @emails = string
+  end
+  
   def parse(string)
     regex = /[,\s]+/
     email_list = string.split(regex)
+    email_list
   end
   
 end
