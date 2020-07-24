@@ -6,6 +6,7 @@
 class EmailAddressParser
   
   @@emails = ''
+  @@parsed
   
   def initialize(string)
     @@emails << string
@@ -14,7 +15,7 @@ class EmailAddressParser
   def parse
     regex = /[,\s]+/
     email_list = @@emails.split(regex)
-    email_list
+    @@parsed = email_list
   end
   
 end
