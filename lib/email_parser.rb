@@ -6,7 +6,7 @@
 class EmailAddressParser
   
   @@emails = ''
-  @@parsed
+  @@parsed = []
   
   def initialize(string)
     @@emails << string
@@ -15,7 +15,14 @@ class EmailAddressParser
   def parse
     regex = /[,\s]+/
     email_list = @@emails.split(regex)
-    @@parsed = email_list
+    email_list.each do |email|
+      if @@parsed.include? (email)
+        return
+      else
+        @@parsed << email
+      end
+    end
+    @@parsed
   end
   
 end
