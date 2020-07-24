@@ -5,22 +5,23 @@
 
 class EmailAddressParser
   
-  @@emails = ''
-  @@parsed = []
+  attr_accessor :emails, :parsed
   
-  def initialize(string)
-    @@emails << string
+  
+  def initialize(emails)
+    @emails = emails
   end
 
   def parse
+    @parsed = []
     regex = /[,\s]+/
-    email_list = @@emails.split(regex)
+    email_list = @emails.split(regex)
     email_list.each do |email|
-      if !@@parsed.include? (email)
-        @@parsed << email
+      if !@parsed.include? (email)
+        @parsed << email
       end
     end
-    @@parsed
+    @parsed
   end
   
 end
